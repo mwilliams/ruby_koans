@@ -1,5 +1,6 @@
 require 'edgecase'
 
+
 class AboutClasses < EdgeCase::Koan
   class Dog
   end
