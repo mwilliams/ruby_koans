@@ -11,10 +11,20 @@
 # The tests for this method can be found in
 #   about_triangle_project.rb
 # and
-#   about_triangle_project_2.rb
+#   about_triangle_project_2.
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  if a <= 0
+    raise TriangleError
+  elsif b <= 0
+    raise TriangleError
+  elsif c <= 0
+    raise TriangleError
+  else
+    return :equilateral if a == b && a == c
+    return :isosceles if a == b || a == c || b == c
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
