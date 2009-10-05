@@ -14,17 +14,18 @@
 #   about_triangle_project_2.
 #
 def triangle(a, b, c)
-  if a <= 0
-    raise TriangleError
-  elsif b <= 0
-    raise TriangleError
-  elsif c <= 0
-    raise TriangleError
-  else
-    return :equilateral if a == b && a == c
-    return :isosceles if a == b || a == c || b == c
-    :scalene
-  end
+  raise TriangleError and return if a == 0 and b == 0 and c == 0
+  raise TriangleError and return if negative?(a,b,c)
+  raise TriangleError and return if a == c
+  return :equilateral if a == b && a == c
+  return :isosceles if a == b || a == c || b == c
+  :scalene
+end
+
+private
+
+def negative?(a,b,c)
+  true if a < 0 or b < 0 or c < 0
 end
 
 # Error class used in part 2.  No need to change this code.
